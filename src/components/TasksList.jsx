@@ -7,9 +7,15 @@ function Tasklist() {
 
     const {TasksList} = useContext(TaskContext);
 
+    if(TasksList.length === 0){
+        return(
+            <div className="text-center text-4xl text-gray-500">No hay tareas</div>
+        )
+    }
+
 
     return(
-        <div>
+        <div className="grid grid-cols-4  gap-2">
             {
                 TasksList.map((task) => {
                     return(
